@@ -1,112 +1,104 @@
 
+
 ---
 
-```markdown
+````markdown
 # Hostel Management System
 
-This is a complete web-based hostel management system that helps manage daily operations in a student hostel. It supports role-based access for Chief Warden, Wardens, Students, and Security Staff.
+This is a web-based system designed to simplify hostel management. It helps hostel staff and students manage everything from room allocations to complaints, leaves, daily cleaning updates, and security logs. It also allows communication with parents using SMS.
 
-The system allows easy room and block allocations, student complaint handling, leave approvals, security tracking, and direct communication with parents. It is built using Node.js, Express, MongoDB for the backend, and HTML, CSS, and JavaScript for the frontend.
+The system is built using Node.js, Express, MongoDB, HTML, CSS, and JavaScript. It supports role-based access for Chief Warden, Warden, Students, and Security Staff.
 
-## Key Features
+---
+
+## Main Features
 
 ### Chief Warden
-- Assigns hostel blocks and rooms to different wardens.
+- Assigns blocks and rooms to each warden.
 
 ### Warden
-- Allocates rooms to students.
-- Approves or rejects student leave requests.
-- Views and resolves complaints submitted by students.
-- Sends SMS updates to parents using Twilio API.
-- Keeps track of student and staff entry/exit through the security log.
+- Allocates rooms to students in the assigned blocks.
+- Approves or rejects leave requests submitted by students.
+- Views and resolves complaints sent by students.
+- Sends updates to parents using the Twilio SMS API.
+- Monitors security logs of who is going out and coming in.
 
 ### Student
-- Views assigned room details.
-- Submits complaints to the warden.
-- Applies for leave.
-- Reports whether their room has been cleaned on a given day.
+- Can view room details.
+- Submit complaints to the assigned warden.
+- Apply for leave.
+- Report whether their room was cleaned today.
 
 ### Security
-- Maintains a logbook of students, staff, and visitors going in and out.
-- Records details like name, reason for going out, time left, and expected return time.
+- Maintains entry and exit records of students, staff, and visitors.
+- Logs name, reason for leaving, time out, and expected return time.
 
-## Technology Used
+---
+
+## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Node.js with Express.js  
+- **Backend**: Node.js with Express  
 - **Database**: MongoDB  
-- **APIs Used**: Twilio API for sending SMS messages to parents
+- **SMS Communication**: Twilio API  
 
-## Project Structure
+---
 
-```
+## Folder Structure
 
-HOSTELMan/
-├── public/             # Frontend assets like CSS and JS
-├── routes/             # Route handlers
-├── models/             # Database schemas
-├── views/              # HTML/EJS templates (if used)
-├── .env                # Environment configuration
-├── server.js           # Main server file
-├── package.json        # Project and dependency details
+- `public/` – Frontend files (CSS, JS, images)  
+- `routes/` – Defines all backend routes  
+- `models/` – Mongoose schemas for database collections  
+- `views/` – HTML or EJS templates (if used)  
+- `.env` – Contains environment variables (not included in repo)  
+- `server.js` – Main backend server file  
+- `package.json` – Lists project dependencies and info  
 
-```
+---
 
 ## How to Run the Project
 
-1. **Clone the Repository**
-```
-
-git clone [https://github.com/Kouser3485/HOSTELMan.git](https://github.com/Kouser3485/HOSTELMan.git)
+**1. Clone the Repository**
+```bash
+git clone https://github.com/Kouser3485/HOSTELMan.git
 cd HOSTELMan
+````
 
-```
+**2. Install Required Packages**
 
-2. **Install Required Packages**
-```
-
+```bash
 npm install
-
 ```
 
-3. **Set Up Environment Variables**
+**3. Set Up Environment Variables**
 
-Create a `.env` file in the root folder with the following content:
+Create a file named `.env` in the root folder and add your credentials:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+TWILIO_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
 ```
 
-MONGODB\_URI=your\_mongodb\_connection\_string
-TWILIO\_SID=your\_twilio\_sid
-TWILIO\_AUTH\_TOKEN=your\_twilio\_auth\_token
+**4. Run the Application**
 
+```bash
+node server.js
 ```
 
-4. **Start the Server**
-```
+**5. Open in Browser**
 
-npm start
-
-```
-
-5. **Access the App in Your Browser**
-
-Visit:
-```
-
-[http://localhost:3000](http://localhost:3000)
+Go to this URL to view the app:
 
 ```
-
-## About the Project
-
-This project was developed to digitally manage and simplify various tasks in a student hostel. From handling rooms and complaints to tracking leave and communicating with parents, the system is designed to make hostel operations smooth and efficient.
-
-## License
-
-This project is open-source and released under the [MIT License](LICENSE).
-
-## GitHub Repository
-
-[https://github.com/Kouser3485/HOSTELMan](https://github.com/Kouser3485/HOSTELMan)
+http://localhost:3000
 ```
 
 ---
+
+## About This Project
+
+This project was built to manage hostel operations efficiently in real-time. It covers everything from assigning rooms to students, managing complaints and leaves, and maintaining logs for security. It also ensures parents can be kept in the loop through automated messages.
+
+---
+
